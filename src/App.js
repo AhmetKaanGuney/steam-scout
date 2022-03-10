@@ -1,16 +1,23 @@
 import './App.css';
-import { Outlet, Link } from 'react-router-dom';
+import { 
+  BrowserRouter as Router, 
+  Routes,
+  Route } from 'react-router-dom';
+ import Navbar from "./components/Navbar.js"
+ import Homepage from "./routes/homepage.jsx"
+ import GetAppDetails from "./routes/get-app-details.jsx"
 
 function App() {
   return (
-    <div>
-      <nav>
-        Navbar---
-        <Link to='/'>Homepage</Link>---
-        <Link to='/GetAppDetails'>GetAppDetails</Link>
-      </nav>
-      <Outlet />
-    </div>
+      <Router>
+        <div className='app'>
+          <Navbar />
+            <Routes>
+              <Route path="/" exact element={<Homepage />} />
+              <Route path="/GetAppDetails/:appid" element={<GetAppDetails />} />
+            </Routes>
+        </div>
+      </Router>
   );
 }
 

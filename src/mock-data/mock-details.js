@@ -22,8 +22,8 @@ let appDetails = {
     },
 
     "owner_count"     : 0,
-    "positive_reviews": 0,
-    "negative_reviews": 0,
+    "positive_reviews": 200,
+    "negative_reviews": 10,
 
     "about_the_game"      : "About the game...",
     "short_description"   : "Short description...",
