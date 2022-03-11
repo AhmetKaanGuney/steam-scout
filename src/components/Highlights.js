@@ -1,11 +1,10 @@
 import React from 'react'
-import CoverImage from './CoverImage.js'
-import HighlightInfo from './HighlightInfo.js'
+import HighlightBox from './HighlightBox.js'
 
-function Highlights({highlights}) {
+export default function Highlights({highlights}) {
   return (
     <div className="highlights">
-      <h2>HIGHLIGHTS</h2>
+      <p id='highlights-title'>HIGHLIGHTS</p>
       {
         highlights.map((h) => {
           return (
@@ -16,14 +15,3 @@ function Highlights({highlights}) {
     </div>
   )
 }
-
-function HighlightBox({data}) {
-  return (
-    <div className='higlight-box'>
-      <CoverImage imageLink={data.cover_image} />
-      <HighlightInfo data={data} />
-    </div>
-  )
-}
-
-export default Highlights

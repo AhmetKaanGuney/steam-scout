@@ -6,14 +6,16 @@ import mockDetails from '../mock-data/mock-details.js';
 
 export default function Homepage() {
   const appdata = mockDetails();
-  const highlights = [{
+  let highlights_obj1 = {
     cover_image: appdata.header_image,
     reviews: {
       positive: appdata.positive_reviews,
       negative: appdata.negative_reviews
     },
     tags: appdata.tags
-  }]
+  }
+  const highlights = [highlights_obj1, highlights_obj1]
+  
   return (
     <main className='homepage'>
       <Highlights highlights={highlights} />

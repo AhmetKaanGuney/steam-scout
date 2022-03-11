@@ -3,14 +3,12 @@ import Tag from './Tag.js'
 
 export default function Tags({tags}) {
   return (
-    <div className='higlight-tags'>
-      <ul>
+      <ul className='highlight-tags container'>
         {tags.map(t => {
           return (
             <Tag name={t.name} id={t.id} key={t.id} />
           )
         })}
       </ul>
-    </div>
   )
 }

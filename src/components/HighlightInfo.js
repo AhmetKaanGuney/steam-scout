@@ -4,7 +4,7 @@ import Tags from './Tags.js'
 
 export default function HighlightInfo({data}) {
   return (
-    <div className='app-info'>
+    <div className='highlight-info'>
       <Reviews
         positive={data.reviews.positive}
         negative={data.reviews.negative}
@@ -13,5 +13,3 @@ export default function HighlightInfo({data}) {
     </div>
   )
 }
-
-

@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  color: white;
+  background-color: var(--main-bg-color);
+}
+
+body {
+  margin: 0;
+  font-family: 'Verdana', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+
+nav {
+  font-size: 1.6rem;
+  background-color:var(--navbar-color);
+  padding: 0.5rem;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.5rem;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -55,10 +55,12 @@ function Applist(props) {
   let order = props.order;
   let index = props.index;
 
-  console.log(AppSnippet.mock())
-
   return (
-    <ul className='applist'></ul>
+    <ul className='applist'>
+      <li className='applist-item'>App1</li>
+      <li className='applist-item'>App2</li>
+      <li className='applist-item'>App3</li>
+    </ul>
   )
 }
 export default Applist;

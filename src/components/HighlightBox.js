@@ -1,13 +1,11 @@
 import React from 'react'
-import CoverImage from './CoverImage.js'
-import AppInfo from './AppInfo.js'
+import HighlightInfo from './HighlightInfo.js'
 
-export default function HighlightBox({imageLink, appInfo}) {
+export default function HighlightBox({data}) {
   return (
-    <div className='higlight-box'>
-      HighlightBox
-      <CoverImage imageLink={imageLink} />
-      <AppInfo data={appInfo} />
+    <div className='highlight-box'>
+      <img src={data.cover_image} alt="highlight-cover" className='highlight-cover-image' />
+      <HighlightInfo data={data} />
     </div>
   )
 }
