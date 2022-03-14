@@ -11,6 +11,7 @@
     --medium-blue: hsl(201, 64%, 31%);
     --light-blue:hsl(201, 68%, 82%);
     --light-border-color: rgba(255, 255, 255, 0.144);
+    --max-width: 800px;
 }
 
 .container {
@@ -20,9 +21,6 @@
 /* -------------------------------- */
 /*           HIGLIGHTS              */
 /* -------------------------------- */
-/* .highlights {
-    padding: 1rem 1rem;
-} */
 
 #highlights-title {
     font-size: 1.6rem;
@@ -32,7 +30,8 @@
 
 .highlight-box {
     object-fit: scale-down;
-    max-width: 800px;
+    max-width: var(--max-width);
+    position: relative;
 }
 
 .highlight-cover-image {
@@ -50,10 +49,6 @@
     border-bottom-right-radius: 1rem;
 }
 
-/* .highlight-reviews {
-    font-size: 1.4rem;
-} */
-
 .highlight-tags{
     list-style: none;
     padding: 0;
@@ -67,6 +62,29 @@
     border-radius: 0.5rem;
     padding: 0.5rem;
     margin: 0rem;
+}
+
+.highlights-btn {
+    /* Button Svg - W: 40px H: 126 */
+    position: absolute; 
+    background-color: rgba(0, 0, 0, 20%);
+    opacity: 30%;
+    top: calc(50% - 126px / 2);
+    max-width: 30px;
+}
+
+.highlights-btn:active {
+    opacity: 60%;
+}
+
+#highlight-prev-btn {
+    left: calc(0% + 5px);
+}
+
+#highlight-next-btn{
+    /* 40 is width rest is padding basically */
+    left: calc(100% - 40px - 5px);
+    transform: scaleX(-1);
 }
 
 /* -------------------------------- */
@@ -93,9 +111,9 @@
 
 .applist {
     list-style: none;
-    /* background-color: coral; */
     padding: 0;
     margin-top: 0.5rem;
+    max-width: var(--max-width);
 }
 
 .applist-item {
@@ -104,4 +122,30 @@
     border: 1px solid var(--light-border-color);
     border-radius: 1rem;
     padding: 0.5rem;
+    color: white;
+    display: flexbox;
 }
+
+.applist-item-header {
+    width: 100px;
+    float: left;
+    margin: 1rem 2rem 0 0.5rem;
+}
+
+.applist-item-title {
+    float: left;
+    background-color: aqua;
+}
+
+.applist-item-tags {
+    float: left;
+    background-color: orange;
+}
+
+.applist-item-platforms {
+    float: ;
+}
+
+/* .applist-item-reviews {
+    float: left;
+} */

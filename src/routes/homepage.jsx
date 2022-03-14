@@ -14,8 +14,7 @@ export default function Homepage() {
     },
     tags: appdata.tags
   }
-  const highlights = [highlights_obj1, highlights_obj1]
-  
+  const highlights = [highlights_obj1, highlights_obj1, highlights_obj1, highlights_obj1]
   return (
     <main className='homepage'>
       <Highlights highlights={highlights} />
