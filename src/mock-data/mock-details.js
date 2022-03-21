@@ -1,19 +1,38 @@
+import Applist from "../components/Applist.js";
+
 let appDetails = {
     "app_id"  : 0,
-    "name"    : "Test",
+    "name"    : "Test Title Edition: Extreme",
     "price"   : null,
 
-    "release_date": "01-01-2000",
+    "release_date": "14-04-2000",
     "coming_soon" : false,
 
     "developers": ["dev1", "dev2"],
     "publishers": ["pub1"],
 
-    "tags"        : [{
-        "id": 0,
-        "name": "TestTag",
-        "votes": 1
-    }],
+    "tags"        : [
+        {
+            "id": 0,
+            "name": "TestTag 1",
+            "votes": 1
+        },
+        {
+            "id": 1,
+            "name": "TestTag 2",
+            "votes": 12
+        },
+        {
+            "id": 2,
+            "name": "TestTag 3",
+            "votes": 54
+        },
+        // {
+        //     "id": 3,
+        //     "name": "TestTag 4",
+        //     "votes": 34
+        // }
+    ],
     "genres"      : {
         "TestGenre": 0
     },
@@ -22,7 +41,7 @@ let appDetails = {
     },
 
     "owner_count"     : 0,
-    "positive_reviews": 200,
+    "positive_reviews": 50,
     "negative_reviews": 10,
 
     "about_the_game"      : "About the game...",
@@ -44,10 +63,12 @@ let appDetails = {
     "languages": "English, French, German, Italian, Spanish - Spain, Korean, Russian, Simplified Chinese, Traditional Chinese",
 
     "windows" : true,
-    "mac"     : false,
+    "mac"     : true,
     "linux"   : true
 }
 
-export default function mockDetails() {
-    return appDetails
+export default function mockDetails(appID) {
+    let newApp = {...appDetails};
+    newApp.app_id = appID;
+    return newApp;
 }

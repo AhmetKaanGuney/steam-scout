@@ -7,11 +7,14 @@
 :root {
     --main-bg-color: hsl(210, 33%, 11%);
     --navbar-color:hsl(210, 27%, 26%);
-    --dark-blue:hsl(210, 64%, 15%);
+    --dark-blue:hsl(210, 64%, 16%);
     --medium-blue: hsl(201, 64%, 31%);
     --light-blue:hsl(201, 68%, 82%);
     --light-border-color: rgba(255, 255, 255, 0.144);
     --max-width: 800px;
+    --positive-review-color: #138900;
+    --mixed-review-color: #897B00;
+    --negative-review-color: #893100;
 }
 
 .container {
@@ -61,7 +64,8 @@
     background-color: var(--dark-blue);
     border-radius: 0.5rem;
     padding: 0.5rem;
-    margin: 0rem;
+    margin: 0rem 0.1rem;
+    font-size: 1.2rem;
 }
 
 .highlights-btn {
@@ -123,29 +127,70 @@
     border-radius: 1rem;
     padding: 0.5rem;
     color: white;
-    display: flexbox;
+    font-size: 0.8rem;
 }
 
-.applist-item-header {
-    width: 100px;
+.item-left {
     float: left;
+    width: 110px;
+    margin: 0 1.4rem 0 0;
+    object-fit: scale-down;
+}
+
+.item-header {
+    width: 100%;
     margin: 1rem 2rem 0 0.5rem;
+    /* border-radius: 0.5rem; */
 }
 
-.applist-item-title {
-    float: left;
-    background-color: aqua;
+.item-under-header {
+    display: block;
+    width: 100%;
+    margin: 0.2rem 0 0 0.5rem;
+    text-align: center;
 }
 
-.applist-item-tags {
-    float: left;
-    background-color: orange;
+.item-release-date {
+    display: inline-block;
 }
 
-.applist-item-platforms {
-    float: ;
+.item-reviews {
+    display: inline-block;
+    background-color: rgba(194, 0, 0, 0.425);
+    border-radius: 0.3rem;
+    padding: 2px;
+    margin-left: 1.6rem;
 }
 
-/* .applist-item-reviews {
-    float: left;
-} */
+.item-reviews[state="positive"] {
+    background-color: var(--positive-review-color);
+}
+.item-reviews[state="mixed"] {
+    background-color: var(--mixed-review-color);
+}
+.item-reviews[state="negative"] {
+    background-color: var(--negative-review-color);
+}
+
+.item-title {
+    font-size: 1.2rem;
+    display: inline-block;
+    background-color: rgba(0, 255, 255, 0.445);
+    margin: 1rem 0 0.7rem 0;
+}
+
+.item-platforms {
+    display: inline-block;
+    margin-bottom: 0.6rem;
+}
+
+.item-tags {
+    display: inline;
+    background-color: rgba(255, 166, 0, 0.281);
+}
+
+.item-platform-icon {
+    margin: 0 0.2rem;
+    height: 12px;
+    opacity: 40%;
+}
