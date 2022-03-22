@@ -2,7 +2,7 @@ import Applist from "../components/Applist.js";
 
 let appDetails = {
     "app_id"  : 0,
-    "name"    : "Test Title Edition: Extreme",
+    "name"    : "Test Title Edition: Extreme Gang of Wars",
     "price"   : null,
 
     "release_date": "14-04-2000",
@@ -27,11 +27,21 @@ let appDetails = {
             "name": "TestTag 3",
             "votes": 54
         },
-        // {
-        //     "id": 3,
-        //     "name": "TestTag 4",
-        //     "votes": 34
-        // }
+        {
+            "id": 3,
+            "name": "TestTag 4",
+            "votes": 34
+        },
+        {
+            "id": 4,
+            "name": "TestTag 5",
+            "votes": 34
+        },
+        {
+            "id": 5,
+            "name": "TestTag 6",
+            "votes": 34
+        },
     ],
     "genres"      : {
         "TestGenre": 0

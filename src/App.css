@@ -19,6 +19,30 @@
 
 .container {
     display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    /* justify-content: center; */
+}
+
+.container > * {
+    margin-bottom: 1rem;
+}
+
+.reviews {
+    display: inline-block;
+    border-radius: 0.3rem;
+    padding: 2px;
+}
+
+.reviews[state="positive"] {
+    background-color: var(--positive-review-color);
+}
+.reviews[state="mixed"] {
+    background-color: var(--mixed-review-color);
+}
+.reviews[state="negative"] {
+    background-color: var(--negative-review-color);
 }
 
 /* -------------------------------- */
@@ -52,29 +76,39 @@
     border-bottom-right-radius: 1rem;
 }
 
+.highlight-reviews {
+    font-size: 1.3rem;
+    margin: 0 0 0 0;
+    /* text-align: end; */
+}
+
 .highlight-tags{
     list-style: none;
-    padding: 0;
-    margin: 1rem 0 0 0;
+    padding: 0.5rem 0 0 0;
+    margin: 0.5rem 0 0 0;
+    max-height: 5.5rem;
+    overflow: hidden;
 }
 
 .highlight-tag {
+    font-size: 1.2rem;
     text-decoration: none;
     color: var(--light-blue);
     background-color: var(--dark-blue);
     border-radius: 0.5rem;
     padding: 0.5rem;
-    margin: 0rem 0.1rem;
-    font-size: 1.2rem;
+    margin: 0 0.2rem 0 0;
 }
 
 .highlights-btn {
-    /* Button Svg - W: 40px H: 126 */
+    /* Button Svg - Width: 40px Height: 126 */
     position: absolute; 
     background-color: rgba(0, 0, 0, 20%);
-    opacity: 30%;
+    opacity: 15%;
     top: calc(50% - 126px / 2);
     max-width: 30px;
+    border-radius: 0.3rem;
+    padding: 0.5rem; 
 }
 
 .highlights-btn:active {
@@ -86,8 +120,8 @@
 }
 
 #highlight-next-btn{
-    /* 40 is width rest is padding basically */
-    left: calc(100% - 40px - 5px);
+    /* 24 is width rest is padding basically */
+    left: calc(100% - (24px + 10px));
     transform: scaleX(-1);
 }
 
@@ -104,13 +138,10 @@
 
 .list-selector-item {
     background-color:var(--dark-blue);
-    display: inline;
     margin: 0.2rem;
     padding: 0.5rem;
     border: 1px solid var(--light-border-color);
     border-radius: 1rem;
-    justify-content: center;
-    align-content: center;
 }
 
 .applist {
@@ -152,31 +183,27 @@
 
 .item-release-date {
     display: inline-block;
+    opacity: 80%;
 }
 
 .item-reviews {
-    display: inline-block;
-    background-color: rgba(194, 0, 0, 0.425);
-    border-radius: 0.3rem;
-    padding: 2px;
     margin-left: 1.6rem;
 }
 
-.item-reviews[state="positive"] {
-    background-color: var(--positive-review-color);
+.item-overflow {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-right: 0.5rem;
 }
-.item-reviews[state="mixed"] {
-    background-color: var(--mixed-review-color);
-}
-.item-reviews[state="negative"] {
-    background-color: var(--negative-review-color);
+
+.title-wrapper {
+    margin: 1rem 0 0.7rem 0;
 }
 
 .item-title {
     font-size: 1.2rem;
-    display: inline-block;
-    background-color: rgba(0, 255, 255, 0.445);
-    margin: 1rem 0 0.7rem 0;
+    display: inline;
 }
 
 .item-platforms {
@@ -186,7 +213,8 @@
 
 .item-tags {
     display: inline;
-    background-color: rgba(255, 166, 0, 0.281);
+    color: var(--light-blue);
+    opacity:80%;
 }
 
 .item-platform-icon {
