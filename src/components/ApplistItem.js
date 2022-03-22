@@ -30,7 +30,8 @@ export default function ApplistItem({app}) {
     mac: macIcon,
     linux: linIcon
   }
-  const releaseDate = dateToString(formatDate(app.releaseDate));
+  console.log(app)
+  const releaseDate = dateToString(app.releaseDate);
 
   return (
     <li className='applist-item'>

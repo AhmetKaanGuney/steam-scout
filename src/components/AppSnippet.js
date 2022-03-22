@@ -12,7 +12,7 @@ export default class AppSnippet {
     "negative_reviews": "N/A",
     "owner_count": "N/A",
     "header_image": HEADER_IMG_PLACEHOLDER,
-    "tags": null,
+    "tags": [{}],
     "windows": false, "mac": false, "linux": false 
   }
 

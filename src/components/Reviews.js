@@ -9,6 +9,8 @@ export default function Reviews({positive, negative, classes}) {
     additionalClasses = classes.join(" ")
   }
   return (
-    <span className={'reviews ' + additionalClasses} state={reviewState}>{reviewScore + "%"}</span>
+    <span className={'reviews ' + additionalClasses} state={reviewState}>
+      {isNaN(reviewScore) ? "N/A" : reviewScore + "%"}
+    </span>
   )
 }
