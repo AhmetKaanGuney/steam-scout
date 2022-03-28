@@ -17,15 +17,6 @@ export function getReviewState(score) {
   }
 }
 
-export function formatDate(date) {
-  if (!date) {
-    return ""
-  }
-  // will convert DD-MM-YYYY to YYYY-MM-DD
-  const [day, month, year] = date.split("-")
-  return [year, month, day].join("-");
-}
-
 export function dateToString(date) {
   // dateFormat YYYY-MM-DD
   if (!date) {
@@ -38,8 +29,8 @@ export function dateToString(date) {
   return [day, month, year].join(" ");
 }
 
-export async function getApplist(query) {
-  console.log("Parameters:\n", query);
+export async function fetchApps(query) {
+  // console.log("Parameters:\n", query);
   return fetch('http://127.0.0.1:5000/GetAppList?' + buildSearchParams(query))
     .then(res => {
       // check errors
@@ -52,7 +43,6 @@ export async function getApplist(query) {
 }
 
 function buildSearchParams(query) {
-  let searchParams = new URLSearchParams(query);
-  console.log(searchParams.toString());
+  const searchParams = new URLSearchParams(query);
   return searchParams.toString();
 }

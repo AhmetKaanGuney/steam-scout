@@ -1,37 +1,69 @@
 import {React, useState, useEffect} from 'react'
-import { getApplist } from '../utils.js';
+import { fetchApps } from '../utils.js';
 import Highlights from '../components/Highlights.js';
 import ListSelector from '../components/ListSelector.js';
 import Applist from "../components/Applist.js"
-import mockDetails from '../mock-data/mock-details.js';
+import AppSnippet from '../components/AppSnippet.js';
 
 export default function Homepage() {
-  const appdata = mockDetails();
-  let highlights_obj1 = {
-    cover_image: appdata.header_image,
-    reviews: {
-      positive: appdata.positive_reviews,
-      negative: appdata.negative_reviews
-    },
-    tags: appdata.tags
-  }
-  const highlights = [highlights_obj1, highlights_obj1, highlights_obj1, highlights_obj1]
-
   const [applist, setApplist] = useState([]);
+  const [highlights, setHighlights] = useState([new AppSnippet()]);
+  const [option, setOption] = useState(0);
 
-  let query = {
-    tags: [],
-    genres: [],
-    categories: [],
-    index: 0,
-    order: ["owner_count", "DESC"],
-    limit: 20
+  const options = [
+    {id: 0, name: "New & Trending"},
+    {id: 1, name: "Old But Gold"},
+    {id: 2, name: "Best Reviews"},
+    {id: 3, name: "Most Recent"},
+  ]
+
+  const applistQuery = (() => {
+    const query = {
+      index: 0,
+      limit: 10,
+      order: [
+        "release_date", "DESC",
+        "(positive_reviews / negative_reviews)", "DESC"
+      ]
+    }
+    console.log(options[option])
+    switch (options[option].name) {
+      case "New & Trending":
+        query.order = [
+          "release_date", "DESC",
+          "(positive_reviews / negative_reviews)", "DESC"
+        ]
+        break;
+      case "Old But Gold":
+        query.order = [
+          "release_date", "ASC",
+          "(positive_reviews / negative_reviews)", "DESC"
+        ]
+    }
+    console.log(query)
+    return query;
+  })();
+
+  const highlightsQuery = {
+    order: [
+      "owner_count", "DESC",
+      "(positive_reviews / negative_reviews)", "DESC",
+      "release_date", "DESC"
+    ],
+    limit: 10
   }
+
   useEffect(() => {
-    getApplist(query).then(apps => {
-      if (apps !== undefined) {
-        console.log("Response:", apps);
-        setApplist(apps);
+    // Highlights
+    fetchApps(highlightsQuery).then(res => {
+      if (res !== undefined) {
+        setHighlights(res.map(i => new AppSnippet(i)))
+      }
+    });
+    // Applist
+    fetchApps(applistQuery).then(res => {
+      if (res !== undefined) {
+        setApplist(res);
       }
     });
   }, [])
@@ -39,7 +71,7 @@ export default function Homepage() {
   return (
     <main className='homepage'>
       <Highlights highlights={highlights} />
-      <ListSelector />
+      <ListSelector selection={option} setOption={setOption} options={options} />
       <Applist applist={applist} />
     </main>
   )

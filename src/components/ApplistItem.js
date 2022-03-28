@@ -1,17 +1,19 @@
 import React from 'react'
 import Reviews from './Reviews.js'
-import AppSnippet from './AppSnippet.js'
-import {calculateReviews, getReviewState, formatDate, dateToString} from "../utils.js"
+import {dateToString} from "../utils.js"
 import winIcon from "../assests/icons/windows-white.png"
 import macIcon from "../assests/icons/mac-white.png"
 import linIcon from "../assests/icons/linux-white.png"
 
 export default function ApplistItem({app}) {
+  if (app === null) {
+    return "";
+  }
   // Get tag names as comma seperated string
   const tags = (() => {
     // Check if tags has any item
-    if (Object.keys(app.tags).length <= 0) {
-      return ""
+    if (!app.tags) {
+      return "";
     }
     
     let tagList = [];
@@ -30,7 +32,6 @@ export default function ApplistItem({app}) {
     mac: macIcon,
     linux: linIcon
   }
-  console.log(app)
   const releaseDate = dateToString(app.releaseDate);
 
   return (
