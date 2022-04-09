@@ -1,6 +1,7 @@
 import mockDetails from "../mock-data/mock-details.js";
 import headerImagePlaceholder from "../assests/images/header-image-placeholder.svg";
 
+// Added genres and categories to attributes to AppSnippet
 export default class AppSnippet {
   static defaults = {
     "app_id": null, 
@@ -13,6 +14,8 @@ export default class AppSnippet {
     "owner_count": "N/A",
     "header_image": headerImagePlaceholder,
     "tags": null,
+    "genres": null,
+    "categories": null,
     "windows": false, "mac": false, "linux": false 
   }
 
@@ -29,10 +32,12 @@ export default class AppSnippet {
     this.negativeReviews = app.negative_reviews;
     this.ownerCount = app.owner_count;
     this.headerImage = app.header_image;
+    this.tags = app.tags;
+    this.genres = app.genres;
+    this.categories = app.categories;
     this.windows = app.windows;
     this.mac = app.mac;
     this.linux = app.linux;
-    this.tags = app.tags;
   }
 
   initWithDefaults(app) {

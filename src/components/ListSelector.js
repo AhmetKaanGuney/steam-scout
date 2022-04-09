@@ -1,23 +1,18 @@
 import React from 'react'
 
-function ListSelector({options, selection, setOption}) {
-  // const options = [
-  //   "New & Trending",
-  //   "Old But Gold",
-  //   "Best Reviews",
-  //   "Most Recent"
-  // ]
-  
-  const handleClick = (e) => {
-    const id = parseInt(e.target.attributes["option-id"].value);
-    setOption(id);
-  }
+export default function ListSelector({options, selection, onSelectionChange}) {
   return (
     <ul className='list-selector container'>
     {
       options.map(({name, id}) => {
         return (
-          <li className="list-selector-item" data-selected={id === selection} onClick={handleClick} key={`list-selection-${id}`} option-id={id} >
+          <li 
+            className="list-selector-item" 
+            data-selected={id === selection} 
+            onClick={onSelectionChange} 
+            key={`list-selection-${id}`} 
+            option-id={id} 
+          >
             {name}
           </li>
         )
@@ -26,5 +21,3 @@ function ListSelector({options, selection, setOption}) {
     </ul>
   )
 }
-
-export default ListSelector
