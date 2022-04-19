@@ -4,6 +4,7 @@ import {dateToString} from "../../utils.js"
 import winIcon from "../../assests/icons/windows-white.png"
 import macIcon from "../../assests/icons/mac-white.png"
 import linIcon from "../../assests/icons/linux-white.png"
+import headerImagePlaceholder from "../../assests/images/header-image-placeholder.svg"
 import "./applist.css"
 import { Link } from 'react-router-dom'
 
@@ -39,7 +40,14 @@ export default function ApplistItem({app}) {
   return (
     <li className='applist-item'>
       <div className="item-left">
-        <img src={app.headerImage} alt="app-logo" className='item-image' />
+        <img 
+          src={app.headerImage} alt="app-logo" 
+          className='item-image' 
+          onError={({currentTarget}) => {
+            currentTarget.onerror = null;
+            currentTarget.src = {headerImagePlaceholder};
+          }}
+        />
         <p className='item-under-image'>
           <span className='item-release-date'>{releaseDate}</span>
           <Reviews classes="item-reviews" rating={app.rating} />

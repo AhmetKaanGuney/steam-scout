@@ -91,29 +91,35 @@ export default function Homepage() {
       index: index,
       limit: 10,
       coming_soon: 0,
-      release_date: ["!=", "''"]
+      release_date: ["IS NOT", "NULL"],
+      rating: ["IS NOT", "NULL"],
     };
     switch (selection.name) {
       case "New & Trending":
         query.order = [
-          "release_date", "DESC",
           "rating", "DESC",
+          "release_date", "DESC",
+          "name", "ASC"
         ];
         break;
       case "Most Recent":
         query.order = [
-          "release_date", "ASC"
+          "release_date", "ASC",
+          "name", "ASC"
         ];
         break;
       case "Best Reviews":
         query.order = [
-          "rating", "DESC"
+          "positive_reviews", "DESC",
+          "rating", "DESC",
+          "name", "ASC"
         ];
         break;
       case "Old But Gold":
         query.order = [
           "rating", "DESC",
           "release_date", "ASC",
+          "name", "ASC"
         ];
         break;
     }
