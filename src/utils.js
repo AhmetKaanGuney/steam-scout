@@ -6,13 +6,16 @@ export function calculateReviews(positive, negative) {
   return Math.round(positivePercentage).toFixed(1);
 }
 
-export function getReviewState(score) {
-  if (isNaN(score)) {
+export function getReviewState(rating) {
+  if (rating === undefined) {
+    throw Error("rating is undefined!")
+  }
+  if (rating === null) {
     return "N/A"
   }
-  if (score > 80) {
+  if (rating > 80) {
     return "positive";
-  } else if (score < 50) {
+  } else if (rating < 50) {
     return "negative";
   } else {
     return "mixed";
@@ -32,6 +35,7 @@ export function dateToString(date) {
 }
 
 export async function fetchApps(query) {
+  console.log("Order: ", query.order);
   return fetch(`${API}GetAppList?` + buildSearchParams(query))
     .then(res => {
       // check errors

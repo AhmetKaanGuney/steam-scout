@@ -9,6 +9,7 @@ export default class AppSnippet {
     "price": "N/A",
     "release_date": "N/A", 
     "coming_soon": false,
+    "rating": "N/A",
     "positive_reviews": "N/A", 
     "negative_reviews": "N/A",
     "owner_count": "N/A",
@@ -28,6 +29,7 @@ export default class AppSnippet {
     this.price = app.price;
     this.releaseDate = app.release_date;
     this.comingSoon = app.coming_soon;
+    this.rating = app.rating;
     this.positiveReviews = app.positive_reviews;
     this.negativeReviews = app.negative_reviews;
     this.ownerCount = app.owner_count;

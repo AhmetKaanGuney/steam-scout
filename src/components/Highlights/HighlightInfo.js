@@ -9,7 +9,7 @@ export default function HighlightInfo({data}) {
   return (
     <div className='highlight-info'>
       <p className='highlight-reviews'>
-        Reviews: <Reviews positive={data.positiveReviews} negative={data.negativeReviews}/>
+        Reviews: <Reviews rating={data.rating}/>
       </p>
       <ul className='highlight-tags container'>
         {

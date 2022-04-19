@@ -8,8 +8,8 @@ import "./applist.css"
 import { Link } from 'react-router-dom'
 
 export default function ApplistItem({app}) {
-  if (app === null) {
-    return "";
+  if (app.rating == null || app.rating == undefined) {
+    console.warn(app.appid, "-", app.name, " | ", app.rating);
   }
   // Get tag names as comma seperated string
   const tags = (() => {
@@ -42,7 +42,7 @@ export default function ApplistItem({app}) {
         <img src={app.headerImage} alt="app-logo" className='item-image' />
         <p className='item-under-image'>
           <span className='item-release-date'>{releaseDate}</span>
-          <Reviews classes="item-reviews" positive={app.positiveReviews} negative={app.negativeReviews} />
+          <Reviews classes="item-reviews" rating={app.rating} />
         </p>
       </div>
       <div className="item-overflow title-wrapper">

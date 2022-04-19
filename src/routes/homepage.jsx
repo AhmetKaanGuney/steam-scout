@@ -18,11 +18,9 @@ export default function Homepage() {
     {id: 3, name: "Old But Gold"},
   ];
 
-
   const updateApplist = debounce(() => {
     queryIndex += batchSize;
-    const query = buildQuery(selection, queryIndex);
-    console.log("Index: ", query.index)
+    const query = buildQuery(options[selection], queryIndex);
     fetchApps(query).then(res => {
       if (res !== undefined) {
         setApplist(prevList => {
@@ -40,9 +38,8 @@ export default function Homepage() {
     console.log("Effect!")
     const highlightsQuery = {
       order: [
+        "rating", "DESC",
         "owner_count", "DESC",
-        "(positive_reviews / negative_reviews)", "DESC",
-        "release_date", "DESC"
       ],
       limit: 10
     };
@@ -53,7 +50,7 @@ export default function Homepage() {
       }
     });
     // Applist
-    const applistQuery = buildQuery(options[selection], 0);
+    const applistQuery = buildQuery(options[selection], queryIndex);
     fetchApps(applistQuery).then(res => {
       if (res !== undefined) {
         setApplist(res);
@@ -87,40 +84,36 @@ export default function Homepage() {
   };
 
   const buildQuery = (selection, index) => {
-    console.log(selection)
+    if (selection === undefined || !isNaN(selection)) {
+      console.error("Selection '", selection, "'", "is valid!");
+    }
     const query = {
       index: index,
       limit: 10,
       coming_soon: 0,
       release_date: ["!=", "''"]
     };
-    // New & Trending (default order)
-    query.order = [
-      "release_date", "DESC",
-      "(positive_reviews / negative_reviews)", "DESC"
-    ];
-
     switch (selection.name) {
       case "New & Trending":
         query.order = [
           "release_date", "DESC",
-          "(positive_reviews / negative_reviews)", "DESC"
+          "rating", "DESC",
         ];
         break;
       case "Most Recent":
         query.order = [
-          "release_date", "DESC"
+          "release_date", "ASC"
         ];
         break;
       case "Best Reviews":
         query.order = [
-          "(positive_reviews / negative_reviews)", "DESC"
+          "rating", "DESC"
         ];
         break;
       case "Old But Gold":
         query.order = [
+          "rating", "DESC",
           "release_date", "ASC",
-          "(positive_reviews / negative_reviews)", "DESC"
         ];
         break;
     }
