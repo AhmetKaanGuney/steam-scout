@@ -40,26 +40,6 @@ export default class AppSnippet {
     this.linux = app.linux;
   }
 
-  initWithDefaults(app) {
-    const defaults = AppSnippet.defaults;
-    const defaultKeys = Object.keys(defaults);
-    for (let key of defaultKeys) {
-      if (key in app) {
-        continue;
-      } else {
-        app[key] = defaults[key];
-      }
-    }
-  }
-
-  limitTags(tags) {
-    if (tags) {
-      const maxTagCount = 15;
-      tags.splice(maxTagCount);
-      return tags;
-    }
-  }
-
   static mock() {
     return new AppSnippet(mockDetails());
   }

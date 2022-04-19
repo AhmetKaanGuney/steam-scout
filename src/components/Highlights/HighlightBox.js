@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import HighlightInfo from './HighlightInfo.js'
-import nextIconSmall from '../assests/icons/next-icon-small.svg'
-import headerImagePlaceholder from "../assests/images/header-image-placeholder.svg"
+import nextIconSmall from '../../assests/icons/next-icon-small.svg'
+import headerImagePlaceholder from "../../assests/images/header-image-placeholder.svg"
+import './highlights.css'
 
 export default function HighlightBox({data, onNextClick, onPrevClick}) {
   const [headerImageLoaded, setHeaderImageLoaded] = useState(false);

@@ -1,9 +1,9 @@
 import {React, useState, useEffect} from 'react'
 import { fetchApps, debounce } from '../utils.js';
-import Highlights from '../components/Highlights.js';
+import Highlights from '../components/Highlights/Highlights.js';
 import ListSelector from '../components/ListSelector.js';
-import Applist from "../components/Applist.js"
-import AppSnippet from '../components/AppSnippet.js';
+import Applist from "../components/Applist/Applist.js"
+import AppSnippet from '../appdata/appSnippet.js';
 
 export default function Homepage() {
   const [applist, setApplist] = useState([]);
@@ -20,9 +20,9 @@ export default function Homepage() {
 
 
   const updateApplist = debounce(() => {
-    console.log("Update applist!")
     queryIndex += batchSize;
     const query = buildQuery(selection, queryIndex);
+    console.log("Index: ", query.index)
     fetchApps(query).then(res => {
       if (res !== undefined) {
         setApplist(prevList => {
@@ -89,7 +89,9 @@ export default function Homepage() {
   const buildQuery = (selection, index) => {
     const query = {
       index: index,
-      limit: 10
+      limit: 10,
+      coming_soon: 0,
+      release_date: ["!=", "''"]
     };
     // Default order
     query.order = [

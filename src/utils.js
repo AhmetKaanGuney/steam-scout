@@ -8,7 +8,7 @@ export function calculateReviews(positive, negative) {
 
 export function getReviewState(score) {
   if (isNaN(score)) {
-    return ""
+    return "N/A"
   }
   if (score > 80) {
     return "positive";

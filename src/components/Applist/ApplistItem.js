@@ -1,9 +1,10 @@
 import React from 'react'
-import Reviews from './Reviews.js'
-import {dateToString} from "../utils.js"
-import winIcon from "../assests/icons/windows-white.png"
-import macIcon from "../assests/icons/mac-white.png"
-import linIcon from "../assests/icons/linux-white.png"
+import Reviews from '../Reviews.js'
+import {dateToString} from "../../utils.js"
+import winIcon from "../../assests/icons/windows-white.png"
+import macIcon from "../../assests/icons/mac-white.png"
+import linIcon from "../../assests/icons/linux-white.png"
+import "./applist.css"
 
 export default function ApplistItem({app}) {
   if (app === null) {
@@ -40,7 +41,7 @@ export default function ApplistItem({app}) {
         <img src={app.headerImage} alt="item-header" className='item-header' />
         <p className='item-under-header'>
           <span className='item-release-date'>{releaseDate}</span>
-          <Reviews classes={["item-reviews"]} positive={app.positiveReviews} negative={app.negativeReviews} />
+          <Reviews classes="item-reviews" positive={app.positiveReviews} negative={app.negativeReviews} />
         </p>
       </div>
       <div className="item-overflow title-wrapper">

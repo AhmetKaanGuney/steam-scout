@@ -1,4 +1,5 @@
 import React from 'react'
+import './highlights.css'
 
 export default function CoverImage({imageLink}) {
   console.log("Cover image link:", imageLink);

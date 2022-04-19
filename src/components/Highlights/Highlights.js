@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import HighlightBox from './HighlightBox.js'
-import AppSnippet from './AppSnippet.js'
+import AppSnippet from '../../appdata/appSnippet.js'
+import './highlights.css'
 
 export default function Highlights({items}) {
   const [index, setIndex] = useState(0);

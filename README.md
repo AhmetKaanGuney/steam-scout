@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+### *This project is still in development.*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+*Dependencies :*<br>
+*node == v16.13.1*<br>
+*npm == 8.5.2*
 
-## Available Scripts
+***
 
-In the project directory, you can run:
+## Inroduction
+SteamScout is a web app that allows you to browse unpopular/old games that are on Steam.
+It uses [SteamAppsDB](https://github.com/AhmetKaanGuney/steam-apps-db) (a public Web API that I created) to get information about the games.
 
-### `npm start`
+***
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Motivation:
+I wanted to develop my JavaScript and React skills.
+I also wanted to develop a web app specifically for mobile phones.
+Then I started to think about what kind of web app should I develop.
+Well I'm really into games and I often find myself browsing indie games.
+Steam is a great platform to browse games but after a while I realised that same popular 
+games are always popping up in my browsing list.
+To pass throgh those games you gotta search really deep.
+So I thought why not make a website that contains *only* unpopular games.
+Maybe there are some hidden gems in there.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<hr>
 
-### `npm test`
+### TODO:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] Infinite scroll
+- [x] Default sorting methods
+- [x] Highlights
+- [x] Applist
+- [ ] Request caching
+- [ ] Desktop support
+- [ ] Fix links
+- [ ] Slide animation for Higlights component
+- [ ] Custom filters (tags, genres, categories, rating)
+- [ ] Searchbar
 
-### `npm run build`
+<hr>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Disclaimer:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This project is a hobby project and is not affiliated with Valve or Steam.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This website displays various information and statistics about Steam applications which are obtained from [SteamAppsDB](https://github.com/AhmetKaanGuney/steam-apps-db).
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Steam and the Steam logo are trademarks of Valve Corporation. All other trademarks are property of their respective owners.

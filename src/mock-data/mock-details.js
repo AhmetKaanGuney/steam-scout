@@ -1,5 +1,3 @@
-import Applist from "../components/Applist.js";
-
 let appDetails = {
     "app_id"  : 0,
     "name"    : "Test Title Edition: Extreme Gang of Wars",

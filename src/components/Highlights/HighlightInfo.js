@@ -1,6 +1,7 @@
 import React from 'react'
-import Reviews from './Reviews.js'
-import Tag from './Tag.js'
+import Reviews from '../Reviews.js'
+import Tag from '../Tag.js'
+import './highlights.css'
 
 export default function HighlightInfo({data}) {
   const tags = data.tags ? data.tags : [];

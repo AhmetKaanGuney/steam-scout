@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import AppDetails from '../components/AppDetails.js';
+import AppDetails from '../appdata/appDetails.js';
 
 export default function GetAppDetails() {
   const {appid} = useParams();
