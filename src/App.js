@@ -12,9 +12,11 @@ function App() {
         <div className='app'>
           <div className='page-container'>
             <Navbar />
-            <Routes>
-              <Route path="/" exact element={<Homepage />} />
-            </Routes>
+            <div className='limit-width'>
+              <Routes>
+                <Route path="/" exact element={<Homepage />} />
+              </Routes>
+            </div>
           </div>
         </div>
       </Router>

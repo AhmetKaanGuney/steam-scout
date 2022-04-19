@@ -1,14 +1,31 @@
+.list-selector-wrapper {
+    /* position: relative; */
+    /* margin: 0 0 6rem 0;
+    padding: 2rem;
+    border: solid red; */
+}
+
 .list-selector {
     /* font-size: 1.4rem; */
     /* background-color: cadetblue; */
     list-style: none;
-    padding: 0px;
-    margin: 1rem 0 0 0;
+    padding: 0px 0 0 2px;
+    margin: 1.5rem 0 0.8rem 0;
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow:auto;
+    scrollbar-width: none;
+}
+
+.list-selector::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 
 .list-selector-item {
     background-color:var(--dark-blue);
-    margin: 0.2rem;
+    margin: 0.1rem;
     padding: 0.5rem;
     border: 1px solid var(--light-border-color);
     border-radius: 1rem;

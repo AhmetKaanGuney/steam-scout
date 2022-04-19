@@ -13,9 +13,9 @@ export default function Homepage() {
   const batchSize = 10;
   const options = [
     {id: 0, name: "New & Trending"},
-    {id: 1, name: "Old But Gold"},
+    {id: 1, name: "Most Recent"},
     {id: 2, name: "Best Reviews"},
-    {id: 3, name: "Most Recent"},
+    {id: 3, name: "Old But Gold"},
   ];
 
 
@@ -87,21 +87,33 @@ export default function Homepage() {
   };
 
   const buildQuery = (selection, index) => {
+    console.log(selection)
     const query = {
       index: index,
       limit: 10,
       coming_soon: 0,
       release_date: ["!=", "''"]
     };
-    // Default order
+    // New & Trending (default order)
     query.order = [
       "release_date", "DESC",
       "(positive_reviews / negative_reviews)", "DESC"
     ];
+
     switch (selection.name) {
       case "New & Trending":
         query.order = [
           "release_date", "DESC",
+          "(positive_reviews / negative_reviews)", "DESC"
+        ];
+        break;
+      case "Most Recent":
+        query.order = [
+          "release_date", "DESC"
+        ];
+        break;
+      case "Best Reviews":
+        query.order = [
           "(positive_reviews / negative_reviews)", "DESC"
         ];
         break;

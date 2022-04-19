@@ -32,7 +32,7 @@ Maybe there are some hidden gems in there.
 - [x] Highlights
 - [x] Applist
 - [ ] Request caching
-- [ ] Overflow List Selector
+- [x] Scrollable List Selector
 - [x] Desktop support
 - [ ] Fix links
 - [ ] Slide animation for Higlights component
