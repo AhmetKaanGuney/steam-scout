@@ -17,6 +17,12 @@
     --negative-review-color: #893100;
 }
 
+.page-container {
+    justify-content: center;
+    max-width: var(--max-width);
+    margin: auto;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -33,6 +39,7 @@
     display: inline-block;
     border-radius: 0.3rem;
     padding: 2px;
+    cursor: default;
 }
 
 .reviews[state="positive"] {
@@ -48,4 +55,8 @@
     background-color: rgb(167, 167, 167);
 }
 
-
+.nav-item {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}

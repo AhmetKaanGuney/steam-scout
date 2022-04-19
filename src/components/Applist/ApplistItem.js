@@ -5,6 +5,7 @@ import winIcon from "../../assests/icons/windows-white.png"
 import macIcon from "../../assests/icons/mac-white.png"
 import linIcon from "../../assests/icons/linux-white.png"
 import "./applist.css"
+import { Link } from 'react-router-dom'
 
 export default function ApplistItem({app}) {
   if (app === null) {
@@ -38,8 +39,8 @@ export default function ApplistItem({app}) {
   return (
     <li className='applist-item'>
       <div className="item-left">
-        <img src={app.headerImage} alt="item-header" className='item-header' />
-        <p className='item-under-header'>
+        <img src={app.headerImage} alt="app-logo" className='item-image' />
+        <p className='item-under-image'>
           <span className='item-release-date'>{releaseDate}</span>
           <Reviews classes="item-reviews" positive={app.positiveReviews} negative={app.negativeReviews} />
         </p>
