@@ -1,89 +1,73 @@
 import {React, useState, useEffect} from 'react'
-import { fetchApps, debounce } from '../utils.js';
+import { debounce, fetchAndUpdate } from '../utils.js';
 import Highlights from '../components/Highlights/Highlights.js';
 import ListSelector from '../components/ListSelector.js';
 import Applist from "../components/Applist/Applist.js"
 import AppSnippet from '../appdata/appSnippet.js';
 
+let queryIndex = 0;
+let selection = 0;
+
 export default function Homepage() {
-  const [applist, setApplist] = useState([]);
-  let queryIndex = 0;
+  const BATCH_SIZE = 10;
   const [highlights, setHighlights] = useState([new AppSnippet()]);
-  const [selection, setSelection] = useState(0);
-  const batchSize = 10;
+  const [applist, setApplist] = useState([]);
   const options = [
     {id: 0, name: "New & Trending"},
     {id: 1, name: "Most Recent"},
     {id: 2, name: "Best Reviews"},
     {id: 3, name: "Old But Gold"},
   ];
-
-  const updateApplist = debounce(() => {
-    queryIndex += batchSize;
-    const query = buildQuery(options[selection], queryIndex);
-    fetchApps(query).then(res => {
-      if (res !== undefined) {
-        setApplist(prevList => {
-          const newList = [...prevList];
-          for (let i of res) {
-            newList.push(i);
-          }
-          return newList;
-        });
-      }
-    });
-  }, 1000);
+  const highlightsQuery = {
+    order: [
+      "rating", "DESC",
+      "owner_count", "DESC",
+    ],
+    limit: 10
+  };
 
   useEffect(() => {
-    console.log("Effect!")
-    const highlightsQuery = {
-      order: [
-        "rating", "DESC",
-        "owner_count", "DESC",
-      ],
-      limit: 10
-    };
-    // Highlights
-    fetchApps(highlightsQuery).then(res => {
-      if (res !== undefined) {
-        setHighlights(res);
-      }
-    });
-    // Applist
+    // Set Highlights
+    fetchAndUpdate(highlightsQuery, setHighlights);
+    
+    // Set Applist
     const applistQuery = buildQuery(options[selection], queryIndex);
-    fetchApps(applistQuery).then(res => {
-      if (res !== undefined) {
-        setApplist(res);
-      }
-    });
+    fetchAndUpdate(applistQuery, setApplist);
 
-    // Infinite Scroll
+    // Set Infinite Scroll
     window.addEventListener('scroll', () => {
       if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
-        updateApplist();
+        appendToList();
       }
     });
-
   }, []);
 
   const handleSelectionChange = (e) => {
-    console.log("Handle Selection!")
     const id = parseInt(e.target.attributes["option-id"].value);
-    const index = 0;
-    debounce(queryApplist(buildQuery(options[id], index)));
-    setSelection(id);
-    queryIndex = index;
+    queryIndex = 0;
+    const query = buildQuery(options[id], queryIndex);
+    fetchAndUpdate(query, setApplist);
+    selection = id;
   }
 
-  const queryApplist = (query) => {
-    fetchApps(query).then(res => {
-      if (res !== undefined) {
-        setApplist(res);
-      }
+  const appendToList = debounce(() => {
+    queryIndex += BATCH_SIZE;
+    const query = buildQuery(options[selection], queryIndex);
+    fetchAndUpdate(query, (res) => {
+      setApplist(prevList => {
+        const newList = [...prevList];
+        for (let i of res) {
+          newList.push(i);
+        }
+        return newList;
+      });
     });
-  };
+  }, 100);
 
   const buildQuery = (selection, index) => {
+    console.log("INDEX:", index);
+    console.log(selection);
+
     if (selection === undefined || !isNaN(selection)) {
       console.error("Selection '", selection, "'", "is valid!");
     }

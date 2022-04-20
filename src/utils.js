@@ -35,7 +35,6 @@ export function dateToString(date) {
 }
 
 export async function fetchApps(query) {
-  console.log("Order: ", query.order);
   return fetch(`${API}GetAppList?` + buildSearchParams(query))
     .then(res => {
       // check errors
@@ -46,6 +45,20 @@ export async function fetchApps(query) {
       }
     })
     .catch(e => console.error('Error:', e));
+}
+
+export function fetchAndUpdate(query, callback) {
+  /* 
+    Memoize:
+    if key in cache:
+      callback(cache[key])
+      return
+  */ 
+  fetchApps(query).then(res => {
+    if (res !== undefined) {
+      callback(res);
+    }
+  });
 }
 
 function buildSearchParams(query) {
