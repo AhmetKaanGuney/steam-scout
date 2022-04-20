@@ -31,7 +31,8 @@ Maybe there are some hidden gems in there.
 - [x] Default sorting methods
 - [x] Highlights
 - [x] Applist
-- [ ] Request caching
+- [x] Request caching
+- [ ] Loading Icon
 - [ ] Fix duplication errors
 - [ ] Infinite scroll triggers multiple times when it shouldn't 
 - [x] Scrollable List Selector

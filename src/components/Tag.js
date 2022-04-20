@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Tag({name, id}) {
   return (
-    <Link to={"/GetTag/" + id.toString()} className="highlight-tag">
+    <Link to={"#" + id.toString()} className="highlight-tag">
       {name}
     </Link>
   )

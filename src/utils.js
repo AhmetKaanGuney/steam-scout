@@ -76,6 +76,51 @@ export function enumerate(arr) {
   return enumerated;
 }
 
+export function buildQuery(selection, index) {
+  console.log(index, selection);
+
+  if (selection === undefined || !isNaN(selection)) {
+    console.error("Selection '", selection, "'", "is valid!");
+  }
+  const query = {
+    index: index,
+    limit: 10,
+    coming_soon: 0,
+    rating: ["IS NOT", "NULL"],
+    release_date: ["IS NOT", "NULL"],
+  };
+  switch (selection.name) {
+    case "New & Trending":
+      query.order = [
+        "rating", "DESC",
+        "release_date", "DESC",
+        "name", "ASC"
+      ];
+      break;
+    case "Most Recent":
+      query.order = [
+        "release_date", "ASC",
+        "name", "ASC"
+      ];
+      break;
+    case "Best Reviews":
+      query.order = [
+        "positive_reviews", "DESC",
+        "rating", "DESC",
+        "name", "ASC"
+      ];
+      break;
+    case "Old But Gold":
+      query.order = [
+        "rating", "DESC",
+        "release_date", "ASC",
+        "name", "ASC"
+      ];
+      break;
+  }
+  return query;
+};
+
 export function debounce(func, delay=300) {
   let timer;
   return (...args) => {

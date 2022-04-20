@@ -57,6 +57,10 @@
     font-size: 0.8rem;
 }
 
+.applist-item:hover {
+    background-color: hsl(210, 64%, 20%);
+}
+
 .item-left {
     float: left;
     width: 110px;
@@ -127,4 +131,26 @@
     background-color: white;
     border-color: rgb(255, 255, 255);
     padding: 0;
+}
+
+
+.loading-icon-wrapper {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.loading-icon {
+    width: 24px;
+    margin: -0.5rem;
+    animation: rotation 0.5s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
 }
