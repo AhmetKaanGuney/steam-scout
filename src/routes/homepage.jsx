@@ -5,8 +5,10 @@ import ListSelector from '../components/ListSelector.js';
 import Applist from "../components/Applist/Applist.js"
 import AppSnippet from '../appdata/appSnippet.js';
 
+// These are set here for sychronus state
 let queryIndex = 0;
 let selection = 0;
+let queryCache = {};
 
 export default function Homepage() {
   const BATCH_SIZE = 10;
@@ -19,25 +21,29 @@ export default function Homepage() {
     {id: 3, name: "Old But Gold"},
   ];
   const highlightsQuery = {
+    index: 0,
+    limit: 10,
+    coming_soon: 0,
+    rating: ["IS NOT", "NULL"],
+    release_date: ["IS NOT", "NULL"],
     order: [
       "rating", "DESC",
       "owner_count", "DESC",
     ],
-    limit: 10
   };
 
   useEffect(() => {
     // Set Highlights
-    fetchAndUpdate(highlightsQuery, setHighlights);
+    fetchAndUpdate(highlightsQuery, setHighlights, queryCache);
     
     // Set Applist
     const applistQuery = buildQuery(options[selection], queryIndex);
-    fetchAndUpdate(applistQuery, setApplist);
+    fetchAndUpdate(applistQuery, setApplist, queryCache);
 
     // Set Infinite Scroll
     window.addEventListener('scroll', () => {
       if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
-        appendToList();
+        appendToApplist();
       }
     });
   }, []);
@@ -46,27 +52,26 @@ export default function Homepage() {
     const id = parseInt(e.target.attributes["option-id"].value);
     queryIndex = 0;
     const query = buildQuery(options[id], queryIndex);
-    fetchAndUpdate(query, setApplist);
+    fetchAndUpdate(query, setApplist, queryCache);
     selection = id;
   }
 
-  const appendToList = debounce(() => {
+  const appendToApplist = debounce(() => {
     queryIndex += BATCH_SIZE;
     const query = buildQuery(options[selection], queryIndex);
     fetchAndUpdate(query, (res) => {
-      setApplist(prevList => {
-        const newList = [...prevList];
+      setApplist(prevlist => {
+        const newlist = [...prevlist];
         for (let i of res) {
-          newList.push(i);
+          newlist.push(i);
         }
-        return newList;
+        return newlist;
       });
-    });
+    }, queryCache);
   }, 100);
 
   const buildQuery = (selection, index) => {
-    console.log("INDEX:", index);
-    console.log(selection);
+    console.log(index, selection);
 
     if (selection === undefined || !isNaN(selection)) {
       console.error("Selection '", selection, "'", "is valid!");
@@ -75,8 +80,8 @@ export default function Homepage() {
       index: index,
       limit: 10,
       coming_soon: 0,
-      release_date: ["IS NOT", "NULL"],
       rating: ["IS NOT", "NULL"],
+      release_date: ["IS NOT", "NULL"],
     };
     switch (selection.name) {
       case "New & Trending":

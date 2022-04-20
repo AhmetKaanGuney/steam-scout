@@ -47,15 +47,15 @@ export async function fetchApps(query) {
     .catch(e => console.error('Error:', e));
 }
 
-export function fetchAndUpdate(query, callback) {
-  /* 
-    Memoize:
-    if key in cache:
-      callback(cache[key])
-      return
-  */ 
+export function fetchAndUpdate(query, callback, cache) {
+  const key = generateKey(query);
+  if (key in cache) {
+    callback(cache[key]);
+    return;
+  }
   fetchApps(query).then(res => {
     if (res !== undefined) {
+      cache[key] = res;
       callback(res);
     }
   });
@@ -84,4 +84,8 @@ export function debounce(func, delay=300) {
       func.apply(this, args);
     }, delay);
   };
+}
+
+function generateKey(query) {
+  return JSON.stringify(query);
 }
