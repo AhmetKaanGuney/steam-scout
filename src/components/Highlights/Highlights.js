@@ -18,13 +18,12 @@ export default function Highlights({items}) {
 
     window.addEventListener('resize', () => {
       if (mediaIsMobile.matches) {
-        console.log("mobıle!");
         setMediaQuery("mobile");
       } else {
-        console.log("desktop!");
         setMediaQuery("desktop");
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
 

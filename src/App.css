@@ -6,6 +6,7 @@
         --nav-padding: 0.5rem 0;
         --nav-font-size: 1.8rem;
         --website-icon-width: 25px;
+        --website-icon-margin-top: 1px;
     }
 }
 
@@ -15,6 +16,7 @@
         --nav-padding: 1rem;
         --nav-font-size: 2rem;
         --website-icon-width: 30px;
+        --website-icon-margin-top: 0px;
     }
 }
 
@@ -87,7 +89,7 @@ nav {
 .nav-title {
     color: white;
     text-decoration: none;
-    margin-left: calc(-1 * var(--menu-icon-width));
+    margin-left: calc(-1 * (var(--menu-icon-width) + var(--website-icon-width)));
 }
 
 .menu-icon {
@@ -95,10 +97,12 @@ nav {
     float: left;
     width: var(--menu-icon-width);
     height: 100%;
+    box-shadow: 0 1px 15px black;
+    cursor: pointer;
 }
 
 .title-steam {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .title-scout {
@@ -107,6 +111,7 @@ nav {
 
 .website-icon {
     position: absolute;
-    margin: 0 0 0 0.3rem;
+    margin-left: 2px;
+    margin-top: var(--website-icon-margin-top);
     width: var(--website-icon-width);
 }

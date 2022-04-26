@@ -117,6 +117,8 @@ export function buildQuery(selection, index) {
         "name", "ASC"
       ];
       break;
+    default:
+      throw Error("Invalid selection.")
   }
   return query;
 };

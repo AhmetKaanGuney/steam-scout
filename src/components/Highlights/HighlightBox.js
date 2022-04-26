@@ -11,7 +11,7 @@ export default function HighlightBox({ data }) {
   return (
     <div className='highlight-box'>
       <div className="highlight-header-wrapper">
-        {headerImageLoaded ? '' : <img src={headerImagePlaceholder} className='header-image-placeholder' alt='header-image-placeholder' />}
+        {headerImageLoaded ? '' : <img src={headerImagePlaceholder} className='header-image-placeholder' alt='placeholder' />}
         <img
           src={data.headerImage}
           alt="highlight-header"

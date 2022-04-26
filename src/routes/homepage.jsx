@@ -18,23 +18,23 @@ const options = [
   {id: 2, name: "Best Reviews"},
   {id: 3, name: "Old But Gold"},
 ];
-const highlightsQuery = {
-  index: 0,
-  limit: 10,
-  coming_soon: 0,
-  rating: ["IS NOT", "NULL"],
-  release_date: ["IS NOT", "NULL"],
-  order: [
-    "rating", "DESC",
-    "owner_count", "DESC",
-  ],
-};
 
 export default function Homepage() {
   const [highlights, setHighlights] = useState([new AppSnippet()]);
   const [applist, setApplist] = useState([]);
 
   useEffect(() => {
+    const highlightsQuery = {
+      index: 0,
+      limit: 10,
+      coming_soon: 0,
+      rating: ["IS NOT", "NULL"],
+      release_date: ["IS NOT", "NULL"],
+      order: [
+        "rating", "DESC",
+        "owner_count", "DESC",
+      ],
+    };
     // Set Highlights
     fetchAndUpdate(highlightsQuery, setHighlights, queryCache);
     
@@ -48,6 +48,7 @@ export default function Homepage() {
         appendToApplist();
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSelectionChange = (e) => {

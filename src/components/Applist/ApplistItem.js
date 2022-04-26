@@ -61,6 +61,8 @@ export default function ApplistItem({app}) {
               ["windows", "mac", "linux"].map(i => {
                 if (app[i]) {
                   return (<img className='item-platform-icon' src={platformIcons[i]} alt={i+"-icon"} key={parseInt(app["app_id"]) + i + "-icon"} />)
+                } else {
+                  return '';
                 }
               })
             }
