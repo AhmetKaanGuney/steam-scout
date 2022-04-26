@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "stam-scout",
     "public": "build",
     "ignore": [
       "firebase.json",
