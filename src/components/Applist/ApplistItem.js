@@ -8,7 +8,7 @@ import headerImagePlaceholder from "../../assets/images/header-image-placeholder
 import "./applist.css"
 
 export default function ApplistItem({app}) {
-  if (app.rating == null || app.rating == undefined) {
+  if (app.rating === null || app.rating === undefined) {
     console.warn(app.appid, "-", app.name, " | ", app.rating);
   }
   // Get tag names as comma seperated string
