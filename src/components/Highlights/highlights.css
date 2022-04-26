@@ -1,6 +1,20 @@
-/*.highlights {
+.highlights {
+    margin: auto;
+    position: relative;
+}
 
-} */
+.list-selector {
+    /* font-size: 1.4rem; */
+    list-style: none;
+    padding: 0px 0 0 2px;
+    margin: 1.5rem 0 0.8rem 0;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    overflow:auto;
+    scrollbar-width: none;
+}
+
 
 #highlights-title {
     font-size: 1.6rem;
@@ -8,9 +22,48 @@
     margin: 0 0 1rem 0;
 }
 
+.highlights-slider {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(10, 85%);
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    scrollbar-width: none;
+    align-items: center;
+}
+
+.highlights-slider::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+
+.highlights-desktop {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 30rem;
+}
+.highlights-desktop-item {
+    position: absolute;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+}
+
+#highlights-selected {
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+}
+
 .highlight-box {
     object-fit: scale-down;
     max-width: var(--max-width);
+    scroll-snap-align: center;
+    opacity: 70%;
+    margin: 0 0.5rem;
 }
 
 .highlight-header-wrapper {
@@ -24,7 +77,6 @@
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     background-color: wheat;
-    min-height: 100%;
 }
 
 .highlight-header-placeholder {
@@ -40,13 +92,13 @@
     padding: 1rem;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
+    min-height: 10rem;
 }
 
 .highlight-reviews {
     font-size: 1.3rem;
     margin: 0 0 0 0;
     cursor: default;
-    /* text-align: end; */
 }
 
 .highlight-tags{
@@ -71,42 +123,35 @@
 .highlight-btn {
     /* Next Icon Svg - Width: 24px Height: 63 */
     --icon-height: 63px;
-    --border-left-right: 0.3rem;
-    --border-top-bottom: 1.5rem;
     position: absolute; 
     max-width: 30px;
-    opacity: 50%;
-    top: calc(50% - var(--icon-height) / 2);
-    background-color: rgba(0, 0, 0, 50%);
-    /* Border */
-    border-radius: 0.4rem;
-    border-top: var(--border-top-bottom) solid transparent;
-    border-bottom: var(--border-top-bottom) solid transparent;
-    border-left: var(--border-left-right) solid rgba(0, 0, 0, 0);
-    border-right: var(--border-left-right) solid rgba(0, 0, 0, 0);
+    opacity: 70%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80px;
+    z-index: 2;
+    border-radius: 0.5rem;
+    padding: 0.4rem;
 }
 
 .highlight-btn:active {
-    opacity: 70%;
-    border-top: calc(var(--border-top-bottom) + 0.1rem) solid transparent;
-    border-bottom: calc(var(--border-top-bottom) + 0.1rem) solid transparent;
-    border-left: calc(var(--border-left-right) + 0.1rem) solid rgba(0, 0, 0, 0);
-    border-right: calc(var(--border-left-right) + 0.1rem) solid rgba(0, 0, 0, 0);
+    opacity: 100%;
 }
 
 .highlight-btn:hover {
-    transition: background-color 0.2s;
-    background-color: rgba(0, 0, 0, 90%);
+    opacity: 90%;
+    transition: opacity 0.1s linear;
 }
 
 #highlight-prev-btn {
-    left: calc(0% + 5px);
+    --icon-width: 24px;
+    left: -40px;
+    background-image: linear-gradient(to right, var(--medium-blue), rgba(0,0,0,0));
 }
 
 #highlight-next-btn{
     /* offset icon to left */
     --icon-width: 24px;
-    --padding: 10px;
-    left: calc(100% - (var(--icon-width) + var(--padding)));
-    transform: scaleX(-1);
+    right: -40px;
+    background-image: linear-gradient(to left, var(--medium-blue), rgba(0,0,0,0));
 }

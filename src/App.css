@@ -9,7 +9,7 @@
     --navbar-color:hsl(210, 27%, 26%);
     --dark-blue:hsl(210, 64%, 16%);
     --medium-blue: hsl(201, 64%, 31%);
-    --light-blue:hsl(201, 68%, 82%);
+    --light-blue:#b2daf0;
     --light-border-color: rgba(255, 255, 255, 0.144);
     --max-width: 460px;
     --positive-review-color: #138900;
@@ -19,7 +19,7 @@
 
 .page-container {
     justify-content: center;
-    max-width: 500px;
+    max-width: 540px;
     margin: auto;
 }
 
@@ -33,7 +33,6 @@
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
-    /* justify-content: center; */
 }
 
 .container > * {
