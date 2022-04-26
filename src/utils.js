@@ -1,4 +1,4 @@
-const API = "http://127.0.0.1:5000/";
+const API = "https://steamappsdb.pythonanywhere.com/";
 
 export function calculateReviews(positive, negative) {
   let total = positive + negative;
@@ -77,8 +77,6 @@ export function enumerate(arr) {
 }
 
 export function buildQuery(selection, index) {
-  console.log(index, selection);
-
   if (selection === undefined || !isNaN(selection)) {
     console.error("Selection '", selection, "'", "is valid!");
   }
