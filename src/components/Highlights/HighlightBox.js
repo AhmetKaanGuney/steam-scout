@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import HighlightInfo from './HighlightInfo.js'
-import headerImagePlaceholder from "../../assests/images/header-image-placeholder.svg"
+import headerImagePlaceholder from "../../assets/images/header-image-placeholder.svg"
 import './highlights.css'
 
 export default function HighlightBox({ data }) {

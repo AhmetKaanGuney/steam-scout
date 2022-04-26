@@ -33,14 +33,16 @@ Maybe there are some hidden gems in there.
 - [x] Applist
 - [x] Request caching
 - [x] Loading Icon
-- [ ] Fix duplication errors
-- [ ] Infinite scroll triggers multiple times when it shouldn't 
+- [x] Fix duplication errors
+- [x] Infinite scroll triggers multiple times when it shouldn't 
 - [x] Scrollable List Selector
 - [x] Desktop support
-- [ ] Fix links
-- [ ] Slide animation for Higlights component
+- [x] Slider for Higlights component
+- [ ] Connect links
 - [ ] Filter menu
 - [ ] Searchbar
+- [ ] App Details Page
+- [ ] About Page
 
 <hr>
 

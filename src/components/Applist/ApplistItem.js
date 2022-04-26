@@ -1,12 +1,11 @@
 import React from 'react'
 import Reviews from '../Reviews.js'
 import {dateToString} from "../../utils.js"
-import winIcon from "../../assests/icons/windows-white.png"
-import macIcon from "../../assests/icons/mac-white.png"
-import linIcon from "../../assests/icons/linux-white.png"
-import headerImagePlaceholder from "../../assests/images/header-image-placeholder.svg"
+import winIcon from "../../assets/icons/windows-white.png"
+import macIcon from "../../assets/icons/mac-white.png"
+import linIcon from "../../assets/icons/linux-white.png"
+import headerImagePlaceholder from "../../assets/images/header-image-placeholder.svg"
 import "./applist.css"
-import { Link } from 'react-router-dom'
 
 export default function ApplistItem({app}) {
   if (app.rating == null || app.rating == undefined) {

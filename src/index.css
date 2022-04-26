@@ -20,12 +20,7 @@ main {
   padding: 1rem;
 }
 
-nav {
-  font-size: 1.8rem;
-  background-color:var(--navbar-color);
-  padding: 0.5rem;
-  text-align: center;
-}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

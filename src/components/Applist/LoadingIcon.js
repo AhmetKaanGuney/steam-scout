@@ -1,5 +1,5 @@
 import React from 'react'
-import loadingIcon from "../../assests/icons/loading-icon.svg"
+import loadingIcon from "../../assets/icons/loading-icon.svg"
 
 export default function LoadingIcon() {
   return (

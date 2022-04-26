@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import HighlightBox from './HighlightBox.js'
 import AppSnippet from '../../appdata/appSnippet.js'
-import nextIconSmall from '../../assests/icons/next-icon-small.svg'
-import prevIconSmall from '../../assests/icons/prev-icon-small.svg'
+import nextIconSmall from '../../assets/icons/next-icon-small.svg'
+import prevIconSmall from '../../assets/icons/prev-icon-small.svg'
 
 import { enumerate } from '../../utils.js'
 import './highlights.css'
@@ -45,8 +45,8 @@ export default function Highlights({items}) {
   }
   return (
     <div className="highlights">
-      <p id='highlights-title'>HIGHLIGHTS - INDEX: {index}</p>
-      <div hidden={mediaQuery !== "mobile"} className='highlights-slider-container'>
+      <p id='highlights-title'>HIGHLIGHTS</p>
+      <div hidden={mediaQuery !== "mobile"}>
         <ul className='highlights-slider' id='highlights-slider' >
           {
             enumerate(highlights).map((i) => {
@@ -77,10 +77,6 @@ export default function Highlights({items}) {
             })
           }
         </ul>
-        {/* <HighlightBox 
-          data={highlights[index]} 
-          key={"highlight-" + highlights[index].appid}
-        /> */}
         <img className='highlight-btn' id='highlight-next-btn' src={prevIconSmall} alt='higlight-button-next' onClick={handleNextClick} />
       </div>
 

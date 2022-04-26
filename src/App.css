@@ -1,20 +1,36 @@
 /* MEDIA QUERIES */
-/* @media screen and (max-width: 479px) {
+
+/* MOBILE */
+ @media screen and (max-width: 900px) {
+    :root {
+        --nav-padding: 0.5rem 0;
+        --nav-font-size: 1.8rem;
+        --website-icon-width: 25px;
+    }
 }
-@media (min-width: 480px) {
-} */
+
+/* DESKTOP */
+@media (min-width: 900px) {
+    :root {
+        --nav-padding: 1rem;
+        --nav-font-size: 2rem;
+        --website-icon-width: 30px;
+    }
+}
 
 :root {
-    --main-bg-color: hsl(210, 33%, 11%);
-    --navbar-color:hsl(210, 27%, 26%);
-    --dark-blue:hsl(210, 64%, 16%);
-    --medium-blue: hsl(201, 64%, 31%);
-    --light-blue:#b2daf0;
-    --light-border-color: rgba(255, 255, 255, 0.144);
-    --max-width: 460px;
-    --positive-review-color: #138900;
-    --mixed-review-color: #897B00;
-    --negative-review-color: #893100;
+    --main-bg-color: hsl(210, 30%, 10%);
+    --medium-grey:hsl(210, 30%, 30%);
+    --dark-blue:hsl(210, 60%, 15%);
+    --medium-blue: hsl(210, 50%, 25%);
+    --light-blue:hsl(210, 40%, 80%);
+    --light-border-color: rgba(255, 255, 255, 0.15);
+    --highlights-width: 460px;
+    --positive-review-color: #118000;
+    --mixed-review-color: #807300;
+    --negative-review-color: #802d00;
+    --bg-gradient: linear-gradient(to bottom right, hsla(210, 40%, 80%, 0.1), transparent);
+    --menu-icon-width: 24px;
 }
 
 .page-container {
@@ -24,7 +40,7 @@
 }
 
 .limit-width {
-    max-width: var(--max-width);
+    max-width: var(--highlights-width);
     margin: auto;
 }
 
@@ -59,8 +75,38 @@
     background-color: rgb(167, 167, 167);
 }
 
-.nav-item {
+nav {
+    font-size: var(--nav-font-size);
+    /* background-color: var(--medium-grey); */
+    background-image: linear-gradient(to left, transparent, var(--medium-grey),var(--medium-grey),var(--medium-grey), transparent);
+    padding: var(--nav-padding);
+    text-align: center;
+    align-items: center;
+}
+
+.nav-title {
     color: white;
     text-decoration: none;
-    margin: 0 0.5rem;
+    margin-left: calc(-1 * var(--menu-icon-width));
+}
+
+.menu-icon {
+    margin: 0.5rem 0 0 1.4rem;
+    float: left;
+    width: var(--menu-icon-width);
+    height: 100%;
+}
+
+.title-steam {
+    font-weight: 700;
+}
+
+.title-scout {
+    font-weight: normal;
+}
+
+.website-icon {
+    position: absolute;
+    margin: 0 0 0 0.3rem;
+    width: var(--website-icon-width);
 }

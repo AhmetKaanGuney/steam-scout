@@ -1,7 +1,6 @@
 
 .list-selector {
     /* font-size: 1.4rem; */
-    list-style: none;
     padding: 0px 0 0 2px;
     margin: 1.5rem 0 0.8rem 0;
     display: flex;
@@ -17,7 +16,7 @@
 }
 
 .list-selector-item {
-    background-color: hsl(210, 64%, 18%);
+    background-color: var(--dark-blue);
     margin: 0.1rem;
     padding: 0.5rem;
     border: 1px solid var(--light-border-color);
@@ -38,11 +37,12 @@
     list-style: none;
     padding: 0;
     margin-top: 0.5rem;
-    max-width: var(--max-width);
+    max-width: var(--highlights-width);
 }
 
 .applist-item {
     background-color:var(--dark-blue);
+    background-image: linear-gradient(to top left, var(--main-bg-color), transparent);
     margin: 0px 0px 0.5rem 0;
     border: 1px solid var(--light-border-color);
     border-radius: 1rem;
@@ -66,7 +66,7 @@
     width: 100%;
     margin: 1rem 2rem 0 0.5rem;
     cursor: pointer;    
-    /* border-radius: 0.5rem; */
+    border-radius: 0.3rem;
 }
 
 .item-under-image {
@@ -122,9 +122,12 @@
 }
 
 .item-divider {
-    background-color: white;
     border-color: rgb(255, 255, 255);
     padding: 0;
+    margin: auto;
+    margin-bottom: 4px;
+    opacity: 0.2;
+    width: 425px;
 }
 
 

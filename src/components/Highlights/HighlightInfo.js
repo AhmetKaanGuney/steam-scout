@@ -8,20 +8,20 @@ export default function HighlightInfo({data}) {
 
   return (
     <div className='highlight-info'>
-      <p className='highlight-reviews'>
-        Reviews: <Reviews rating={data.rating}/>
-      </p>
-      <ul className='highlight-tags container'>
-        {
-          tags.map(t => {
-            return (
-              <li key={`app-${data.appid}-tag-${t.id}`}>
-                <Tag name={t.name} id={t.id} />
-              </li>
-            )
-          })
-        }
-      </ul>
+        <p className='highlight-reviews'>
+          Reviews: <Reviews rating={data.rating}/>
+        </p>
+        <ul className='highlight-tags container'>
+          {
+            tags.map(t => {
+              return (
+                <li key={`app-${data.appid}-tag-${t.id}`}>
+                  <Tag name={t.name} id={t.id} />
+                </li>
+              )
+            })
+          }
+        </ul>
     </div>
   )
 }
