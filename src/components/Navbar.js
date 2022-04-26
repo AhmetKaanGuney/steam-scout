@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom"
-import navbarIcon from '../assets/icons/navbar-icon.png'
-import websiteIcon from "../assets/icons/website-logo-1.png";
+import navbarIcon from '../assets/icons/navbar-icon.svg'
+import websiteIcon from "../assets/icons/website-logo.svg";
 
 export default function Navbar() {
   return (
