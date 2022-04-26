@@ -105,7 +105,7 @@ export function buildQuery(selection, index) {
       break;
     case "Most Recent":
       query.order = [
-        "release_date", "ASC",
+        "release_date", "DESC",
         "name", "ASC"
       ];
       break;
