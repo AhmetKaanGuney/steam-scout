@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "stam-scout",
+    "site": "steam-scout",
     "public": "build",
     "ignore": [
       "firebase.json",
