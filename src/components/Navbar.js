@@ -8,9 +8,11 @@ export default function Navbar() {
     <nav>
       <div className='limit-width'>
         <img src={navbarIcon} alt='menu' className='menu-icon'/>
-        <Link to='/' className='nav-title'>
-          <span className='title-steam'>Steam</span><span className='title-scout'>Scout</span>
-          <img src={websiteIcon} alt='website-icon' className='website-icon'/>
+        <Link to='/' className='nav-link'>
+          <h1 className='nav-title'>
+            <span className='title-steam'>Steam</span><span className='title-scout'>Scout</span>
+          </h1>
+          <img src={websiteIcon} alt='steam-scout-icon' className='website-icon'/>
         </Link>
       </div>
     </nav>

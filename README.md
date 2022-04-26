@@ -5,6 +5,7 @@
 *npm == 8.5.2*
 
 ***
+[SteamScout Website](https://steam-scout.firebaseapp.com/)
 
 ## Inroduction
 SteamScout is a web app that allows you to browse unpopular/old games that are on Steam.
@@ -43,6 +44,7 @@ Maybe there are some hidden gems in there.
 - [ ] Searchbar
 - [ ] App Details Page
 - [ ] About Page
+- [ ] Socials Link
 
 <hr>
 

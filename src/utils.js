@@ -1,4 +1,12 @@
-const API = "https://steamappsdb.pythonanywhere.com/";
+const DEBUG_MODE = false;
+let API = null;
+
+if (DEBUG_MODE) {
+  API = "http://127.0.0.1:5000/";
+  console.warn("Debug Mode On: Connecting to:", API);
+} else {
+  API = "https://steamappsdb.pythonanywhere.com/";
+}
 
 export function calculateReviews(positive, negative) {
   let total = positive + negative;

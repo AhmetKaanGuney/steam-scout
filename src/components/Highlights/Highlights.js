@@ -44,7 +44,7 @@ export default function Highlights({items}) {
   }
   return (
     <div className="highlights">
-      <p id='highlights-title'>HIGHLIGHTS</p>
+      <h3 id='highlights-title'>HIGHLIGHTS</h3>
       <div hidden={mediaQuery !== "mobile"}>
         <ul className='highlights-slider' id='highlights-slider' >
           {

@@ -86,10 +86,15 @@ nav {
     align-items: center;
 }
 
-.nav-title {
+.nav-link {
     color: white;
     text-decoration: none;
     margin-left: calc(-1 * (var(--menu-icon-width) + var(--website-icon-width)));
+}
+
+.nav-title {
+    display: inline;
+    font-size: var(--nav-font-size);
 }
 
 .menu-icon {
