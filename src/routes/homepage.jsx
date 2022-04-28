@@ -24,6 +24,7 @@ export default function Homepage() {
   const [applist, setApplist] = useState([]);
 
   useEffect(() => {
+    document.title = "SteamScout - Discover Hidden Gems";
     const highlightsQuery = {
       index: 0,
       limit: 10,
@@ -71,6 +72,9 @@ export default function Homepage() {
         return newlist;
       });
     }, queryCache);
+
+
+
   }, 100);
 
   return (

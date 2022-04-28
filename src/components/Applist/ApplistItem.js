@@ -4,7 +4,7 @@ import {dateToString} from "../../utils.js"
 import winIcon from "../../assets/icons/windows-white.png"
 import macIcon from "../../assets/icons/mac-white.png"
 import linIcon from "../../assets/icons/linux-white.png"
-import headerImagePlaceholder from "../../assets/images/header-image-placeholder.svg"
+import headerImagePlaceholder from "../../assets/images/placeholder.svg"
 import "./applist.css"
 
 export default function ApplistItem({app}) {
@@ -35,12 +35,11 @@ export default function ApplistItem({app}) {
     linux: linIcon
   }
   const releaseDate = dateToString(app.releaseDate);
-
   return (
     <li className='applist-item'>
       <div className="item-left">
         <img 
-          src={app.headerImage} alt="app-logo" 
+          src={app.headerImage} alt="app-cover" 
           className='item-image' 
           onError={({currentTarget}) => {
             currentTarget.onerror = null;

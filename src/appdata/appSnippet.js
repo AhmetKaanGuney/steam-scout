@@ -1,5 +1,5 @@
 import mockDetails from "../mock-data/mock-details.js";
-import headerImagePlaceholder from "../assets/images/header-image-placeholder.svg";
+import headerImagePlaceholder from "../assets/images/placeholder.svg";
 
 // Added genres and categories to attributes to AppSnippet
 export default class AppSnippet {

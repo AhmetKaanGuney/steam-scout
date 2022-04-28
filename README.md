@@ -5,11 +5,11 @@
 *npm == 8.5.2*
 
 ***
-[SteamScout Website](https://steam-scout.firebaseapp.com/)
+[SteamScout Website](https://steam-scout.web.app/)
 
 ## Inroduction
-SteamScout is a web app that allows you to browse unpopular/old games that are on Steam.
-It uses [SteamAppsDB](https://github.com/AhmetKaanGuney/steam-apps-db) (a public Web API that I created) to get information about the games.
+SteamScout is a web app for browsing undiscovered, unexplored and overlooked games that are on Steam.
+It uses [SteamAppsDB](https://github.com/AhmetKaanGuney/steam-apps-db) (a public Web API that I created) to get the information about the games.
 
 ***
 
@@ -18,10 +18,10 @@ I wanted to develop my JavaScript and React skills.
 I also wanted to develop a web app specifically for mobile phones.
 Then I started to think about what kind of web app should I develop.
 Well I'm really into games and I often find myself browsing indie games.
-Steam is a great platform to browse games but after a while I realised that same popular 
+Steam is a great platform to browse games but after a while I realised that the same popular 
 games are always popping up in my browsing list.
 To pass throgh those games you gotta search really deep.
-So I thought why not make a website that contains *only* unpopular games.
+So I thought why not make a website that contains only *unpopular* games.
 Maybe there are some hidden gems in there.
 
 <hr>
