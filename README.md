@@ -1,3 +1,5 @@
+<img src="./resources/github-banner.png" alt="steam-scout-github-banner" width="800" />
+
 ### *This project is still in development.*
 
 *Dependencies :*<br>
