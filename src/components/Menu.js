@@ -6,12 +6,13 @@ export default function Menu({hidden, setVisibility}) {
   }
   return (
     <div className='menu-container' hidden={hidden}>
+      <div className='menu-backdrop' />
       <div className='menu-list'>
-        <a className='menu-item' onClick={handleClick} href="/">Home - 🏠</a>
+        <a className='menu-item' onClick={handleClick} href="/">Home</a>
 
         <hr className='menu-item-divider'/>
 
-        <a className='menu-item' onClick={handleClick} href="/about">About - 📖</a>
+        <a className='menu-item' onClick={handleClick} href="/about">About</a>
 
         <hr className='menu-item-divider'/>
         
