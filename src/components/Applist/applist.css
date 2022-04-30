@@ -42,7 +42,7 @@
 
 .applist-item {
     background-color:var(--dark-blue);
-    background-image: linear-gradient(to top left, var(--main-bg-color), transparent);
+    background-image: linear-gradient(to top left, var(--very-dark-blue), var(--dark-blue));
     margin: 0px 0px 0.5rem 0;
     border: 1px solid var(--light-border-color);
     border-radius: 1rem;

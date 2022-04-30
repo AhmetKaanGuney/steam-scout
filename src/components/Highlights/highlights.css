@@ -24,7 +24,7 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(10, 85%);
+    grid-template-columns: repeat(10, 90%);
     scroll-snap-type: x mandatory;
     overflow-x: auto;
     scrollbar-width: none;
@@ -59,6 +59,8 @@
     max-width: var(--highlights-width);
     scroll-snap-align: center;
     margin: 0 0.5rem;
+    border: 2px solid var(--light-border-color);
+    border-radius: 1rem 1rem 1.2rem 1.2rem;
 }
 
 .highlight-header-wrapper {
@@ -69,8 +71,7 @@
     width: 100%;
     height: 100%;
     margin-bottom: -3px;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+    border-radius: 1rem 1rem 0 0;
     background-color: wheat;
 }
 
@@ -144,12 +145,12 @@
 #highlight-prev-btn {
     --icon-width: 24px;
     left: -40px;
-    background-image: linear-gradient(to right, var(--medium-blue), rgba(0,0,0,0));
+    background-image: linear-gradient(to right, var(--medium-blue), var(--very-dark-blue));
 }
 
 #highlight-next-btn{
     /* offset icon to left */
     --icon-width: 24px;
     right: -40px;
-    background-image: linear-gradient(to left, var(--medium-blue), rgba(0,0,0,0));
+    background-image: linear-gradient(to left, var(--medium-blue), var(--very-dark-blue));
 }

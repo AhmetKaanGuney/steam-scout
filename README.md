@@ -10,22 +10,22 @@
 [SteamScout Website](https://steam-scout.web.app/)
 
 ## Inroduction
-SteamScout is a web app for browsing undiscovered, unexplored and overlooked<br>
-games that are on Steam. It uses [SteamAppsDB](https://github.com/AhmetKaanGuney/steam-apps-db) (a public Web API that I created) <br>
+SteamScout is a web app for browsing undiscovered, unexplored and overlooked games that are on Steam. 
+It uses [SteamAppsDB](https://github.com/AhmetKaanGuney/steam-apps-db) (a public Web API that I created)
 to get the information about the games.
 
 ***
 
 ### Motivation:
 
-I wanted to develop a mobile web app that will strengthen my JavaScript<br>
-and React skills. I'm very interested in video games and I often find <br>
-myself browsing Steam. Steam is a great platform to browse games but <br>
-after a while I realised that the same popular games are always at the <br>
-top of my browsing list. And discovering hidden gems takes a lot of <br>
-time. So I thought why not make a website that only contains games under <br>
-one million owners (approximately).That way you can browse a lot of <br>
-games that you haven't been exposed to.<br>
+I wanted to develop a mobile web app that will strengthen my JavaScript
+and React skills. I'm very interested in video games and I often find 
+myself browsing Steam. Steam is a great platform to browse games but 
+after a while I realised that the same popular games are always at the 
+top of my browsing list. And discovering hidden gems takes a lot of 
+time. So I thought why not make a website that only contains games under 
+one million owners (approximately).That way you can browse a lot of 
+games that you haven't been exposed to.
 
 <hr>
 

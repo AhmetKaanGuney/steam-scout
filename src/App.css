@@ -21,11 +21,14 @@
 }
 
 :root {
-    --main-bg-color: hsl(210, 30%, 10%);
-    --medium-grey:hsl(210, 30%, 30%);
-    --dark-blue:hsl(210, 60%, 15%);
-    --medium-blue: hsl(210, 50%, 25%);
-    --light-blue:hsl(210, 40%, 80%);
+    --main-bg-color: hsl(210, 0%, 0%);
+    --medium-grey:hsl(210, 40%, 30%);
+    --very-dark-blue:hsl(210, 70%,10%);
+    --dark-blue: hsl(210, 60%, 18%);
+    --medium-blue: hsl(210, 60%, 25%);
+    --light-blue: hsl(210, 40%, 80%);
+    --link-color: hsl(210, 100%, 70%);
+    --link-color-hover: hsl(210, 100%, 80%);
     --light-border-color: rgba(255, 255, 255, 0.15);
     --highlights-width: 460px;
     --positive-review-color: #118000;
@@ -79,7 +82,6 @@
 
 nav {
     font-size: var(--nav-font-size);
-    /* background-color: var(--medium-grey); */
     background-image: linear-gradient(to left, transparent, var(--medium-grey),var(--medium-grey),var(--medium-grey), transparent);
     padding: var(--nav-padding);
     text-align: center;
@@ -92,9 +94,15 @@ nav {
     margin-left: calc(-1 * (var(--menu-icon-width) + var(--website-icon-width)));
 }
 
+.nav-link:hover {
+    text-decoration: none;
+    color: white;
+}
+
 .nav-title {
     display: inline;
     font-size: var(--nav-font-size);
+    margin-left: calc(-1 * var(--menu-icon-width));
 }
 
 .menu-icon {
@@ -119,4 +127,105 @@ nav {
     margin-left: 2px;
     margin-top: var(--website-icon-margin-top);
     width: var(--website-icon-width);
+}
+
+
+.red-text {
+    color: rgb(253, 85, 85);
+}
+
+
+/* ABOUT PAGE */
+.about-page-title {
+    font-size: 2rem;
+}
+
+.about-p {
+    padding: 0;
+    margin: 1rem 0 0 0;
+}
+
+.about-title {
+    padding: 0;
+    margin: 2.4rem 0 0 0;
+}
+
+.about-link {
+    margin: 0 1rem;
+}
+
+.github-icon {
+    max-width: 16px;
+    margin: 0;
+}
+
+.about-footer-container {
+    margin-bottom: 3rem;
+}
+
+.about-footer {
+    font-size: 1rem;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 0.5rem 0 0.5rem 0;
+    background-color: var(--dark-blue);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.about-footer-ampersand {
+    opacity: 85%;
+}
+
+/* MENU */
+.menu-container {
+    position: relative;
+    font-size: 1.8rem;
+    z-index: 100;
+    margin: 0 0 0 1rem;
+    justify-items: center;
+}
+
+.menu-list {
+    --navbar-height: 4.4rem;
+    position: absolute;
+    width: 95%;
+    height: calc(100vh - var(--navbar-height));
+    margin: 0;
+    padding: 0;
+    text-align: start;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    background-color: var(--very-dark-blue);
+    box-shadow: 1px 15px 15px 10px rgba(0, 0, 0, 0.8);
+}
+
+.menu-item {
+    /* border: 1px solid rgba(255, 166, 0, 0.726); */
+    display: block;
+    margin: 0;
+    padding: 1rem 0 1rem 1.6rem;
+}
+
+.menu-item:hover, .menu-item:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+}
+
+.menu-item-divider {
+    opacity: 20%;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-footer {
+    font-size: 1.1rem;
+    padding: 1rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }

@@ -78,7 +78,7 @@ export default function Homepage() {
   }, 100);
 
   return (
-    <main className='homepage'>
+    <main>
       <Highlights items={highlights} />
       <ListSelector 
         selection={selection} 
