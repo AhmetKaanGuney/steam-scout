@@ -7,7 +7,7 @@ export default function About() {
       <h2 className='about-page-title'>Welcome To SteamScout</h2>
       <p className='about-p'>
         SteamScout is a web app for browsing undiscovered, unexplored and overlooked games that are on Steam. 
-        It uses <a target="_blank" href='https://github.com/AhmetKaanGuney/steam-apps-db'>SteamAppsDB</a> to get the information about the games.
+        It uses <a target="_blank" rel="noopener noreferrer" href='https://github.com/AhmetKaanGuney/steam-apps-db'>SteamAppsDB</a> to get the information about the games.
       </p>
 
       <h3 className='about-title'>Motivation</h3>
@@ -27,9 +27,9 @@ export default function About() {
 
       <h3 className='about-title'>Disclaimers</h3>
       <p className='about-p'>
-        This project is a hobby project and is not affiliated with <a target="_blank" href='https://www.valvesoftware.com/'>Valve</a> or <a target="_blank" href='https://store.steampowered.com/'>Steam</a>.
+        This project is a hobby project and is not affiliated with <a target="_blank" rel="noopener noreferrer" href='https://www.valvesoftware.com/'>Valve</a> or <a target="_blank" rel="noopener noreferrer" href='https://store.steampowered.com/'>Steam</a>.
         This website displays various information and statistics about Steam 
-        applications which are obtained from <a target="_blank" href='https://github.com/AhmetKaanGuney/steam-apps-db'>SteamAppsDB</a>.<br/>
+        applications which are obtained from <a target="_blank" rel="noopener noreferrer" href='https://github.com/AhmetKaanGuney/steam-apps-db'>SteamAppsDB</a>.<br/>
         <span className='red-text'>These informations and statistics aren't 100% accurate and not always up to date.</span><br/>
         <br/>
         <i>
@@ -39,9 +39,9 @@ export default function About() {
       </p>
       <div className='about-footer-container'>
         <div className='about-footer'>
-          <a className='about-link' target="_blank" href='https://github.com/AhmetKaanGuney/steam-scout'><img className='github-icon'
+          <a className='about-link' target="_blank" rel="noopener noreferrer" href='https://github.com/AhmetKaanGuney/steam-scout'><img className='github-icon'
           src={githubIcon} alt='github-icon'/></a>
-          <a className='about-link' target="_blank" href='https://store.steampowered.com/'>Powered By Steam</a><span className='about-footer-ampersand'>&</span><a className='about-link' target="_blank" href='https://steamspy.com/'>Powered By SteamSpy</a>
+          <a className='about-link' target="_blank" rel="noopener noreferrer" href='https://store.steampowered.com/'>Powered By Steam</a><span className='about-footer-ampersand'>&</span><a className='about-link' target="_blank" rel="noopener noreferrer" href='https://steamspy.com/'>Powered By SteamSpy</a>
         </div>
       </div>
     </main>
