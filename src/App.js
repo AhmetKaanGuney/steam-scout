@@ -11,11 +11,25 @@ import Menu from './components/Menu.js';
 
 function App() {
   const [menuVisible, setMenuVisible] = useState(false);
+  const handleMenuClick = () => {
+    setMenuVisible(prev => {
+      const visibility = !prev;
+
+      // Make body unscrollable
+      const body = document.getElementsByTagName("body")[0];
+      if (visibility) {
+        body.classList.add("overflow-hidden");
+      } else {
+        body.classList.remove("overflow-hidden");
+      }
+      return visibility
+    });
+  }
   return (
       <Router>
         <div className='app'>
           <div className='page-container'>
-            <Navbar onMenuClick={setMenuVisible} />
+            <Navbar onMenuClick={handleMenuClick} />
             <div className='limit-width'>
               <Menu hidden={!menuVisible} setVisibility={setMenuVisible} />
               <Routes>

@@ -68,6 +68,10 @@
     margin-bottom: 1rem;
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
+
 .reviews {
     display: inline-block;
     border-radius: 0.3rem;
@@ -135,8 +139,6 @@ nav {
 .title-scout {
     font-weight: normal;
 }
-
-
 
 .red-text {
     color: rgb(253, 85, 85);
@@ -224,7 +226,7 @@ nav {
 .menu-list {
     /* Remove navbar height for desktop */
     --navbar-height: 4.4rem;
-    height: calc(100vh - var(--navbar-height));
+    height: calc(100vh - var(--navbar-height) - 3rem);
     z-index: 10;
     position: absolute;
     width: 100%;

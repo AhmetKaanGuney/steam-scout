@@ -24,6 +24,11 @@ export default class AppSnippet {
     if (!app) {
       app = AppSnippet.defaults;
     }
+    if (app.header_image === null) {
+      this.headerImage = headerImagePlaceholder
+    } else {
+      this.headerImage = app.header_image;
+    }
     this.appid = app.app_id;
     this.name = app.name;
     this.price = app.price;
@@ -33,7 +38,6 @@ export default class AppSnippet {
     this.positiveReviews = app.positive_reviews;
     this.negativeReviews = app.negative_reviews;
     this.ownerCount = app.owner_count;
-    this.headerImage = app.header_image;
     this.tags = app.tags;
     this.genres = app.genres;
     this.categories = app.categories;
