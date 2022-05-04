@@ -1,5 +1,6 @@
 const DEBUG_MODE = false;
 let API = null;
+export const steamStoreApi = "https://store.steampowered.com/app/"
 
 if (DEBUG_MODE) {
   API = "http://127.0.0.1:5000/";
