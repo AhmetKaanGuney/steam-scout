@@ -36,9 +36,9 @@ export default function ApplistItem({app}) {
   }
   const releaseDate = dateToString(app.releaseDate);
   return (
-    <li className='applist-item'>
+    <a href={`${steamStoreApi}${app.appid}`} target='_blank' rel='noreferrer noopener' className='applist-link'>
+      <li className='applist-item'>
         <div className="item-left">
-        <a href={`${steamStoreApi}${app.appid}`} target='_blank' rel='noreferrer noopener'>
           <img 
             src={app.headerImage} alt="app-cover" 
             className='item-image' 
@@ -47,7 +47,6 @@ export default function ApplistItem({app}) {
               currentTarget.src = {headerImagePlaceholder};
             }}
           />
-        </a>
         <p className='item-under-image'>
           <span className='item-release-date'>{releaseDate}</span>
           <Reviews classes="item-reviews" rating={app.rating} />
@@ -74,6 +73,7 @@ export default function ApplistItem({app}) {
           </div>
           <div style={{clear: "left"}}></div>
         </div>
-    </li>
+      </li>
+    </a>
   )
 }

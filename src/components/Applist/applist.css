@@ -55,6 +55,10 @@
     background-color: hsl(210, 64%, 20%);
 }
 
+.applist-link, .applist-link:hover {
+    text-decoration: none;
+}
+
 .item-left {
     float: left;
     width: 110px;
